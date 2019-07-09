@@ -15,7 +15,7 @@
     },
     "autoload":{
         "psr-4":{
-            "pay\\Library":"src/pay/Library"
+            "pay\\Library\\":"src/pay/Library"
         }
     }
 
