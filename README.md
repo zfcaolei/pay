@@ -1,0 +1,2 @@
+# pay
+weixin/alipay
