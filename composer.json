@@ -1,0 +1,22 @@
+{
+    "name": "zfcaolei/pay",
+    "description": "wxpay && alipay",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zfcaolei",
+            "email": "455549675@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php":">=5.6"
+    },
+    "autoload":{
+        "psr-4":{
+            "pay\\Library":"src/pay/Library"
+        }
+    }
+
+}
