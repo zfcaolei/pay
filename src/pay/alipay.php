@@ -55,7 +55,7 @@ class AliPay{
             'product_code'        =>    'QUICK_MSECURITY_PAY',
         ];
         //商户外网可以访问的异步地址 (异步回掉地址，根据自己需求写)
-        $request->setNotifyUrl(url("/pay/AliPayNotify"));
+        $request->setNotifyUrl("/pay/AliPayNotify");
         $request->setBizContent(json_encode($bizcontent));
         //这里和普通的接口调用不同，使用的是sdkExecute
         $response = $this->aop->sdkExecute($request);
