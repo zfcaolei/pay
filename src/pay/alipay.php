@@ -11,10 +11,10 @@ class AliPay{
 
     var $aop;
 
-    private $alipay_gatewayUrl = "https://openapi.alipay.com/gateway.do"; //网关网址
-    private $alipay_appId = 'alipay_appId';  //appId
-    private $alipay_rsaPrivateKey = '';//私有密钥;
-    private $alipay_rsaPublicKey = ''; //共有密钥
+    public  $alipay_gatewayUrl = "https://openapi.alipay.com/gateway.do"; //网关网址
+    public $alipay_appId = 'alipay_appId';  //appId
+    public $alipay_rsaPrivateKey = '';//私有密钥;
+    public $alipay_rsaPublicKey = ''; //共有密钥
 
 
     public function __construct()
@@ -40,7 +40,7 @@ class AliPay{
      * @param string $order_sn 商户网站唯一订单号
      * @return array 返回订单信息
      */
-    public function tradeAppPay($body, $subject, $order_sn, $total_amount)
+    public function tradeAppPay($body, $subject, $order_sn, $total_amount,$return_url)
     {
         //require_once(EXTEND_PATH . 'alipay/aop/request/AlipayTradeAppPayRequest.php');
         //实例化具体API对应的request类,类名称和接口名称对应,当前调用接口名称：alipay.trade.app.pay
@@ -55,7 +55,7 @@ class AliPay{
             'product_code'        =>    'QUICK_MSECURITY_PAY',
         ];
         //商户外网可以访问的异步地址 (异步回掉地址，根据自己需求写)
-        $request->setNotifyUrl("/pay/AliPayNotify");
+        $request->setNotifyUrl($return_url);//("/pay/AliPayNotify");
         $request->setBizContent(json_encode($bizcontent));
         //这里和普通的接口调用不同，使用的是sdkExecute
         $response = $this->aop->sdkExecute($request);
