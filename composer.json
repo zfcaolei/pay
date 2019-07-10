@@ -14,11 +14,9 @@
         "php":">=5.6"
     },
     "autoload":{
-        "classmap": [
-            "alipay/aop/AopClient.php"
-        ],
         "psr-4":{
-            "pay\\Library\\":"src/pay/Library"
+            "pay\\Library\\":"src/pay/Library",
+            "alipay\\aop\\":"src/alipay/aop"
         }
     }
 
