@@ -1,5 +1,5 @@
 <?php
-namespace app\common\lib;
+namespace pay;
 
 
 
