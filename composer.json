@@ -15,9 +15,9 @@
     },
     "autoload":{
         "psr-4":{
-            "pay\\Library\\":"src/pay/Library",
             "alipay\\aop\\":"src/alipay/aop"
-        }
+        },
+      "files": ["src/alipay/aop/AopClient.php"]
     }
 
 }
