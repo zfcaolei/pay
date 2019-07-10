@@ -42,9 +42,9 @@ class AliPay{
      */
     public function tradeAppPay($body, $subject, $order_sn, $total_amount)
     {
-        require_once(EXTEND_PATH . 'alipay/aop/request/AlipayTradeAppPayRequest.php');
+        //require_once(EXTEND_PATH . 'alipay/aop/request/AlipayTradeAppPayRequest.php');
         //实例化具体API对应的request类,类名称和接口名称对应,当前调用接口名称：alipay.trade.app.pay
-        $request = new \AlipayTradeAppPayRequest();
+        $request =  new \AlipayTradeAppPayRequest();// new \AlipayTradeAppPayRequest();
         //SDK已经封装掉了公共参数，这里只需要传入业务参数
         $bizcontent    =    [
             'body'                =>    $body,
