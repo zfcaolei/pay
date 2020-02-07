@@ -13,4 +13,9 @@ class wxpay
     public function dev(){
 
     }
+
+
+    public function test1(){
+        
+    }
 }
